@@ -1,2 +1,2 @@
-# refusscrimingour.media
-github pages for website refusscrimingour.media
+# My GitHub Pages
+:D
