@@ -1,0 +1,177 @@
+\documentclass[a4paper]{article}
+    \usepackage{fullpage}
+    \usepackage{amsmath}
+    \usepackage{amssymb}
+    \usepackage{textcomp}
+    \usepackage[utf8]{inputenc}
+    \usepackage[T1]{fontenc}
+    \usepackage{latexsym}
+    \usepackage[usenames,dvipsnames]{color}
+    \usepackage{verbatim}
+    \usepackage{enumitem}
+    \usepackage[hidelinks]{hyperref}
+    \usepackage{fancyhdr}
+    \usepackage[english]{babel}
+    \usepackage{tabularx}
+    \textheight=10in
+    \pagestyle{empty}
+    \raggedright
+    \usepackage[left=0.8in,right=0.8in,bottom=0.8in,top=0.8in]{geometry}
+
+    %\renewcommand{\encodingdefault}{cg}
+%\renewcommand{\rmdefault}{lgrcmr}
+
+\def\bull{\vrule height 0.8ex width .7ex depth -.1ex }
+
+% DEFINITIONS FOR RESUME %%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\area} [2] {
+    \vspace*{-9pt}
+    \begin{verse}
+        \textbf{#1}   #2
+    \end{verse}
+}
+
+\newcommand{\lineunder} {
+    \vspace*{-8pt} \\
+    \hspace*{-18pt} \hrulefill \\
+}
+
+\newcommand{\header} [1] {
+    {\hspace*{-18pt}\vspace*{6pt} \textsc{#1}}
+    \vspace*{-6pt} \lineunder
+}
+
+\newcommand{\employer} [3] {
+    { \textbf{#1} (#2)\\ \underline{\textbf{\emph{#3}}}\\  }
+}
+
+\newcommand{\contact} [3] {
+    \vspace*{-10pt}
+    \begin{center}
+        {\Huge \scshape {#1}}\\
+        #2 \\ #3
+    \end{center}
+    \vspace*{-8pt}
+}
+
+\newenvironment{achievements}{
+    \begin{list}
+        {$\bullet$}{\topsep 0pt \itemsep -2pt}}{\vspace*{4pt}
+    \end{list}
+}
+
+\newcommand{\schoolwithcourses} [4] {
+    \textbf{#1} #2 $\bullet$ #3\\
+    #4 \\
+    \vspace*{5pt}
+}
+
+\newcommand{\school} [4] {
+    \textbf{#1} #2 $\bullet$ #3\\
+    #4 \\
+}
+% END RESUME DEFINITIONS %%%%%%%%%%%%%%%%%%%%%%%
+
+    \begin{document}
+\vspace*{-40pt}
+
+    
+
+%==== Profile ====%
+\vspace*{-10pt}
+
+\begin{center}
+    \textbf{\Huge \scshape Garv Shah} \\ \vspace{1pt}
+    \small +61 417 047 047 $|$ \href{mailto:gshah.6110@gmail.com}{gshah.6110@gmail.com} $|$ 
+    \href{https://www.linkedin.com/in/garvshah/}{linkedin.com/in/garvshah} $|$
+    \href{https://garv-shah.github.io/}{github.com/garv-shah}
+\end{center}
+
+%==== Education ====%
+\header{Education}
+\textbf{Caulfield Grammar School - Wheelers Hill Campus}\hfill Jan 2019 - Nov 2024\\
+\begin{itemize} \itemsep 1pt
+	\item Debating Colours: Passionate debater for DAV, Monash Asian Studies and BP Debating.
+        \item Triple Music Colours: Active involvement in the arts with Drum Kit and theatre.
+        \item President and administrator of school maths club.
+        \item Triple Academic Colours and recipient of The Keith V. Crawley Prize for Academic Excellence and The Tom N. Rowe Prize for Service, highest awards for leadership and service.
+        \item Proactive leader amongst peers, member of school committee, Langley house captain
+\end{itemize}
+\vspace{2mm}
+
+%==== Experience ====%
+\header{Work Experience}
+\vspace{1mm}
+
+\textbf{Innovate Technology \& Robotics Academy} \hfill Melbourne, VIC\\
+\textit{Tutor/Assistant for Robotics Competition Team} \hfill Mar 2022 - Jun 2022\\
+\vspace{-1mm}
+\begin{itemize} \itemsep 1pt
+	\item Worked with young students to develop preliminary computer science skills in interactive playgrounds.
+\end{itemize}
+\textbf{CSIRO} \hfill Melbourne, VIC\\
+\textit{Work Experience Student} \hfill Sep 2022\\
+\vspace{-1mm}
+\begin{itemize} \itemsep 1pt
+	\item Worked with industry professionals in various fields of expertise.
+\end{itemize}
+\textbf{Self Employed} \hfill Melbourne, VIC\\
+\textit{Freelance Programmer} \hfill May 2021 - Present\\
+\vspace{-1mm}
+\begin{itemize} \itemsep 1pt
+	\item Worked with various companies as an independent contractor creating innovate solutions for clients.
+\end{itemize}
+
+%==== Voluntary Work ====%
+\header{Voluntary Work}
+{\textbf{Open Source Contributor}} \hfill May 2021 - Present\\
+Frequently contribute to FOSS on GitHub, namely within the Flutter ecosystem.\\
+\vspace*{2mm}
+{\textbf{English and Computing/Design Teacher}} \hfill Balyam (Bass) Children Home | Jun - Jul 2022\\
+Developed basic English vocabulary, literacy, design and typing skills with orphans in India. \\
+\vspace*{2mm}
+{\textbf{Service to School and Charity Work}} \hfill Caulfield Grammar School\\
+4x Service Awards + Community Service Emblem, World's Greatest Shave participant, school tour guide\\
+\vspace*{2mm}
+
+%==== Projects ====%
+\header{Projects}
+{\textbf{Maths Club App}} {\sl Flutter, Firebase} \hfill https://github.com/cgs-math/app\\
+Integrated solution that provides an intuitive way to receive and create problems.\\
+\vspace*{2mm}
+{\textbf{The NOVA System}} {\sl Flutter, REST APIs, Firebase, Node.js} \hfill https://the-nova-system.github.io/\\
+Designed, developed and shipped a system to mimic live cryptocurrency transactions.\\
+Held workshops across campus to educate peers on financial decisions and danger utilising the platform.\\
+\vspace*{2mm}
+{\textbf{Verdis Communications}} {\sl Flutter, Firebase, Docker, Jitsi} \hfill https://github.com/free-republic-of-verdis\\
+A chat/video conferencing solution for a client needing a custom communications platform for their enterprise.\\
+\vspace*{2mm}
+
+%==== Awards ====%
+\header{Awards}
+\textbf{Apple WWDC 2021 Scholarship Award} \hfill Apple Inc. | Jun 2021\\
+One of 300 global students awarded for my app design in the Swift Student Challenge by Apple, allowing me to attend the Worldwide Developer Conference.\\
+\vspace*{2mm}
+\textbf{IMMC Award of Meritorious Achievement} \hfill ACER | May 2022\\
+Placed second in Australia for modelling the most efficient way to board a plan through statistical analysis and algorithmics. Proceeded to the international finals out of 58 finalists.\\
+\vspace*{2mm}
+\textbf{Kwong Lee Dow Young Scholar} \hfill Melbourne University | Nov 2022\\
+Chosen from more than 1500 applicants for academic achievements, community involvement and leadership skills within and outside school.\\
+\vspace*{2mm}
+\textbf{AMC Prize Award} \hfill Australian Maths Trust | Oct 2021\\
+Awarded for being in the top 0.3\% of students in the Australian Maths Competition.\\
+\vspace*{2mm}
+
+%==== Misc ====%
+\header{Miscellaneous}
+\begin{tabular}{ l l }
+	Programming Languages: & Flutter/Dart, Swift, JavaScript, Python, HTML, CSS, TypeScript     \\
+	Software and Tools:    & Adobe Premiere Pro, Adobe After Effects, GitHub, Node.js, Firebase \\
+    Languages:    & Fluent in English, Hindi and Gujarati \\
+    Other Interests:    & Traveling, playing sports (tennis + table tennis), tutoring and reading books! \\
+\end{tabular}
+
+\vspace*{-10pt}
+
+\end{document}
