@@ -13,19 +13,19 @@
     \usepackage{fancyhdr}
     \usepackage[english]{babel}
     \usepackage{tabularx}
+    \usepackage{soul}
     \textheight=10in
     \pagestyle{empty}
     \raggedright
-    \usepackage[left=0.6in,right=0.6in,bottom=0.8in,top=0.8in]{geometry}
+    \usepackage[left=0.25in,right=0.25in,bottom=0.25in,top=0.25in]{geometry}
 
     %\renewcommand{\encodingdefault}{cg}
 %\renewcommand{\rmdefault}{lgrcmr}
 
-\newcommand{\bull}{\vrule height 0.8ex width .7ex depth -.1ex }
-
 % DEFINITIONS FOR RESUME %%%%%%%%%%%%%%%%%%%%%%%
 
 \pagestyle{fancy}
+\setuldepth{underline}
 \fancyhf{} % sets both header and footer to nothing
 \renewcommand{\headrulewidth}{0pt}
 \fancyfoot{}
@@ -40,16 +40,16 @@
 
 \newcommand{\lineunder} {
     \vspace*{-8pt} \\
-    \hspace*{-18pt} \hrulefill \\
+    \hspace*{-10pt} \hrulefill \\
 }
 
 \newcommand{\header} [1] {
-    {\hspace*{-18pt}\vspace*{6pt} \textsc{#1}}
+    {\hspace*{-10pt}\vspace*{6pt} \textsc{#1}}
     \vspace*{-6pt} \lineunder
 }
 
 \newcommand{\employer} [3] {
-    { \textbf{#1} (#2)\\ \underline{\textbf{\emph{#3}}}\\  }
+    { \textbf{#1} (#2)\\ \ul{\textbf{\emph{#3}}}\\  }
 }
 
 \newcommand{\contact} [3] {
@@ -80,132 +80,123 @@
 % END RESUME DEFINITIONS %%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
-\vspace*{-40pt}
 
 
 
 %==== Profile ====%
-\vspace*{-20pt}
 
 \begin{center}
     \textbf{\Huge \scshape Garv Shah} \\ \vspace{1pt}
     \small \href{tel:+61417047047}{+61 417 047 047} $|$ \href{mailto:gshah.6110@gmail.com}{gshah.6110@gmail.com} $|$
-    \href{https://www.linkedin.com/in/garvshah/}{linkedin.com/in/garvshah} $|$
-    \href{https://garv-shah.github.io/}{github.com/garv-shah}
+    \href{https://www.linkedin.com/in/garvshah/}{\ul{LinkedIn}} $|$
+    \href{https://garv-shah.github.io/}{\ul{GitHub}}
 \end{center}
 \vspace{-2mm}
 
 %==== Education ====%
 \header{Education}
-\textbf{Caulfield Grammar School - Wheelers Hill Campus}\hfill Jan 2019 - Nov 2024 | \href{https://www.caulfieldgs.vic.edu.au/wheelers-hill/}{\color{blue}Link}\\
+\href{https://www.caulfieldgs.vic.edu.au/wheelers-hill/}{\textbf{\ul{Caulfield Grammar School - Wheelers Hill}}}\hfill Jan 2019 - Nov 2024\\
+\vspace{-2mm}
 \begin{itemize} \itemsep 1pt
-	\item Double Colours for Debating and Colours for Service to Debating: Passionate debater for DAV, Monash Asian Studies and BP Debating.
-        \item Triple Colours Re-awarded for Music and Colours for Service to Music: Active involvement in the arts with Drum Kit, choir, and theatre (been part of 9 ensembles, 9 productions).
-        \item President and administrator of school \href{https://cgs-math.github.io/}{maths club} and \href{https://cgs-programming.github.io}{programming society, CGSP}.
-        \item Triple Academic Colours Re-awarded and recipient of The Keith V. Crawley Prize for Academic Excellence, The Tom N. Rowe Prize for Service, The C.E.M.\ ‘Gerry’ Gerrand Prize for Service, and The Sir Clive McPherson Prize for Aptitude and Service, highest awards for leadership and service.
-        \item Additionally, also received Colours for Community Service and Emblems for Publications, Cheer Squad, Public Speaking.
-        \item Proactive leader amongst peers, member of school committee, Langley house-captain \& vice-captain.
+	\item Triple Colours for Academics, Debating, Public Speaking, Music, Community Service, Publications \& Cheer Squad.
+        \item Involved in music/theatre (part of 9 ensembles, 9 productions) \& tennis, table-tennis, soccer, badminton, rock-climbing.
+        \item President and administrator of school \href{https://cgs-math.github.io/}{\ul{maths club}} and programming society, \href{https://cgs-programming.github.io}{\ul{CGSP}}
+        \item Member of committee, house-captain \& vice-captain, 10x Service Awards, 5x class captain, raised \$750+ for Leukemia.
 \end{itemize}
 
 %==== Experience ====%
 \header{Work Experience}
 \vspace{1mm}
 
-\textbf{Junior Engineers} \hfill Melbourne, VIC\\
-\textit{Instructor/Teacher} \hfill Dec 2022 - Present\\
+\textbf{Junior Engineers} \textit{Instructor/Teacher} \hfill Dec 2022 - Present\\
 \vspace{-3mm}
 \begin{itemize} \itemsep 0.5pt
-    \item Passionately worked with primary school aged children, working towards making computer science fun!
+    \item Worked with primary school children, building foundations in Cybersecurity, Arduino, Game Dev, Python and JavaScript.
 \end{itemize}
 \vspace{-2mm}
 
-\textbf{Innovate Technology \& Robotics Academy} \hfill Melbourne, VIC\\
-\textit{Tutor/Assistant for Robotics Competition Team} \hfill Mar 2022 - Jun 2022\\
+\textbf{Innovate Technology \& Robotics Academy} \textit{Tutor/Assistant} \hfill Mar 2022 - Jun 2022\\
 \vspace{-3mm}
 \begin{itemize} \itemsep 0.5pt
-	\item Worked with young students to develop preliminary computer science skills in interactive playgrounds.
+	\item Worked with young students to build robotics \& programming skills with VEX IQ as a past national championship winner.
 \end{itemize}
 \vspace{-2mm}
 
-\textbf{CSIRO} \hfill Melbourne, VIC\\
-\textit{Student Internship} \hfill Sep 2022 - Oct 2022\\
+\textbf{CSIRO} \textit{Student Internship} \hfill Sep 2022 - Oct 2022\\
 \vspace{-3mm}
 \begin{itemize} \itemsep 0.5pt
-\item Worked as an intern at CSIRO's research facility with industry professionals in various fields of expertise.
+\item Worked with industry professionals on Titanium Alloy 3D Printing, Electron Microscopy, and Protein Synthesis.
 \end{itemize}
 \vspace{-2mm}
 
-\textbf{Self Employed} \hfill Melbourne, VIC\\
-\textit{Freelance Programmer} \hfill NP Logistics, Verdis Government, etc. | May 2021 - Present\\
+\textbf{Self Employed} \textit{Freelance Programmer} \hfill NP Logistics, Verdis Government, etc. | May 2021 - Present\\
 \vspace{-3mm}
 \begin{itemize} \itemsep 0.5pt
-	\item Worked with various companies as an independent contractor creating innovate solutions for clients.
+	\item Worked with various companies as an independent contractor creating innovate solutions for clients (see projects).
 \end{itemize}
 \vspace{-2mm}
 
 %==== Voluntary Work ====%
 \header{Voluntary Work}
-{\textbf{VicSRC Executive Committee Member}} \hfill \href{https://vicsrc.org.au/}{VicSRC} | Oct 2023 - Present | \href{https://vicsrc.org.au/}{\color{blue}Link}\\
-VicSRC is the peak student representative body in Victoria, led by the Executive Committee who work with the Board of Trustees to represent students at the highest levels of decision-making in Victorian education.\\
-\vspace*{2mm}
-{\textbf{Open Source Contributor}} \hfill May 2021 - Present | \href{https://github.com/garv-shah}{\color{blue}Link}\\
-Frequently contribute to FOSS on GitHub, namely within the Flutter ecosystem.\\
-\vspace*{2mm}
-{\textbf{English and Computing/Design Teacher}} \hfill Balyam (Bass) Children Home | Jun - Jul 2022\\
-Developed basic English vocabulary, literacy, design and typing skills with orphans in India. \\
-\vspace*{2mm}
-{\textbf{Service to School and Charity Work}} \hfill Caulfield Grammar School\\
-10x Service Awards + Community Service Colours, World's Greatest Shave participant, school tour guide, student-teacher on camps, class captain 5 years in a row.\\
-\vspace*{2mm}
+\href{https://vicsrc.org.au/about/executive-committee}{\ul{\textbf{VicSRC Executive Committee Member}}} \hfill \href{https://vicsrc.org.au/}{VicSRC} | Oct 2023 - Present\\
+Worked to represent students at the highest levels of decision-making, peak student representative body in Victoria\\
+\vspace*{1.5mm}
+{\textbf{English and Computing/Design Teacher}} \hfill Balyam (Bass) Children Home | Jun 2022 - Present\\
+Developed English, design and computer skills with orphans in India, leading to the completion of 2 high school diplomas. \\
+\vspace*{1.5mm}
+\href{https://github.com/garv-shah}{\textbf{\ul{Open Source Contributor}}} \hfill May 2021 - Present\\
+FOSS contributor namely within the Flutter ecosystem, actively maintaining AppFlowy, Flutter Quill \& Visual Editor repos.\\
+\vspace*{1.5mm}
 
 %==== Projects ====%
 \header{Projects}
-{\textbf{2cousins}} {\textsl{\hfill} Flutter, Firebase | \href{https://2cousins.org/}{\color{blue}Link}}\\
-Started initiative under my non-profit Aporia to bridge the gap of education between borders, connecting volunteers and tutors across the world.\\
-\vspace*{2mm}
-{\textbf{NP Logistics}} {\textsl{\hfill} Flutter, Firebase, Node.js} | \href{https://nplogistics.com.au}{\color{blue}Link}\\
-Created an enterprise grade logistics and transport solution for NP Logistics, managing orders and deliveries with live tracking functionality to overhaul and transition management to a digital platform.\\
-\vspace*{2mm}
-{\textbf{Maths Club App}} {\textsl{\hfill} Flutter, Firebase} | \href{https://github.com/cgs-math/app}{\color{blue}Link}\\
-Integrated solution that provides an intuitive way to receive and create problems.\\
-\vspace*{2mm}
-{\textbf{CaulfieldSync}} {\textsl{\hfill} Next.js, REST APIs, iCal} | \href{https://caulfieldsync.vercel.app/}{\color{blue}Link}\\
+\href{https://2cousins.org/}{\textbf{\ul{2cousins}}} (Initiative under my non-profit, Aporia) \textit{Founder/CEO} {\textsl{\hfill} Flutter, Firebase}\\
+Helped bridge the gap of education between borders by connecting volunteers and tutors across the world, running weekly Maths and English classes online at partnered organisations.
+Raised over \$1000 for internet infrastructure in Hyderabad.\\
+\vspace*{1.5mm}
+\href{https://nplogistics.com.au}{\textbf{\ul{NP Logistics}}} \textit{Freelance Contractor} {\textsl{\hfill} Flutter, Firebase, Node.js}\\
+Logistics solution managing 15+ orders weekly with live tracking to transition management to a digital platform.\\
+\vspace*{1.5mm}
+\href{https://github.com/cgs-math/app}{\textbf{\ul{Maths Club App}}} {\textsl{\hfill} Flutter, Firebase}\\
+Integrated solution that provides an intuitive way to receive and create problems and connect school community.\\
+\vspace*{1.5mm}
+\href{https://caulfieldsync.vercel.app/}{\textbf{\ul{CaulfieldSync}}} {\textsl{\hfill} Next.js, REST APIs, iCal}\\
 Wrapper API allowing for student infrastructure over school backend (calendar integration + 4 apps).\\
-\vspace*{2mm}
-{\textbf{The NOVA System}} {\textsl{\hfill} Flutter, REST APIs, Firebase, Node.js} | \href{https://the-nova-system.github.io/}{\color{blue}Link}\\
-Designed, developed and shipped a system to mimic live cryptocurrency transactions.\\
-Held workshops across campus to educate peers on financial decisions and danger utilising the platform.\\
+\vspace*{1.5mm}
+\href{https://the-nova-system.github.io/}{\textbf{\ul{The NOVA System}}} \textit{Founder/CEO} {\textsl{\hfill} Flutter, REST APIs, Firebase, Node.js}\\
+Created system to mimic live cryptocurrency transactions, holding workshops across campus on financial safety/education using platform.
+Secured capital from VC investors and IB curriculum coordinators before closure due to provider pricing changes.\\
 
 %%==== Research ====%
-\newgeometry{left=0.6in,right=0.6in,bottom=0.8in,top=0.4in}
 %\header{Research}
 %\textbf{Applications of the Travelling Salesperson Problem} \hfill Jun 2023 - Aug 2023 | \href{https://garv-shah.github.io/applications_of_tsp.pdf}{\color{blue}Link}\\
 %Explored applications of the TSP as part of Algorithmics (HESS), including algorithmic approaches, mathematical proofs and real world implications. \\
-%\vspace*{2mm}
+%\vspace*{1.5mm}
 %\textbf{Australian Kriol} \hfill Oct 2023 | \href{https://garv-shah.github.io/australian_kriol.pdf}{\color{blue}Link}\\
 %Literature review on the linguistic history and strata influence on Australian Kriol.\\
-%\vspace*{2mm}
+%\vspace*{1.5mm}
 
 %==== Awards ====%
 \header{Awards}
-\textbf{Apple WWDC 2021 Scholarship Award} \hfill Apple Inc. | Jun 2021 | \href{https://www.wwdcscholars.com/s/DF1A5147-A993-44E4-8739-8A050139A7BA/2021}{\color{blue}Link}\\
-One of 300 global students awarded for my app design in the Swift Student Challenge by Apple, allowing me to attend the Worldwide Developer Conference.\\
-\vspace*{2mm}
-\textbf{IMMC Award of Meritorious Achievement} \hfill ACER | May 2022 | \href{https://www.acer.org/au/discover/article/bray-park-and-caulfield-grammar-schools-top-maths-challenge}{\color{blue}Link}\\
-Placed second in Australia for modelling the most efficient way to board a plane through statistical analysis and algorithmics, proceeding to the international finals out of 58 global finalists.\\
-\vspace*{2mm}
-\textbf{AMC Prize Award} \hfill Australian Maths Trust | Oct 2021\\
-Awarded the AMC Prize Award for being in the top 0.3\% of students in the Australian Maths Competition.\\
-\vspace*{2mm}
-\textbf{Kwong Lee Dow Young Scholar} \hfill Melbourne University | Nov 2022 | \href{https://www.linkedin.com/posts/caulfield-grammar-school_caulfieldgrammar2022-activity-7001816876439781376-DZpH}{\color{blue}Link}\\
-Chosen from more than 1500 applicants for academic achievements, community involvement and leadership skills within and outside school.
-Started a vibrant student community \href{https://garv-shah.github.io/green/}{"Green"} with 150+ members.\\
-\vspace*{2mm}
-\textbf{ADF Future Innovators Award} \hfill Australian Defence Force | Nov 2022 | \href{https://adffutureinnovators.defencejobs.gov.au/schools/AwardsInformationSTEM.aspx}{\color{blue}Link}\\
+\href{https://www.wwdcscholars.com/s/DF1A5147-A993-44E4-8739-8A050139A7BA/2021}{\textbf{\ul{Apple WWDC 2021 Scholarship Award}}} \textit{App Development} \hfill Apple Inc. | Jun 2021\\
+One of 300 global students awarded in the Swift Student Challenge, allowing me to attend the Worldwide Developer Conference.\\
+\vspace*{1.5mm}
+\href{https://www.acer.org/au/discover/article/bray-park-and-caulfield-grammar-schools-top-maths-challenge}{\textbf{\ul{IMMC Award of Meritorious Achievement}}} \textit{Statistical \& Algorithmic Analysis} \hfill ACER | May 2022\\
+Placed 2nd in Australia for modelling most efficient way to board planes, proceeding to the international finals out of 58 finalists.\\
+\vspace*{1.5mm}
+\href{https://www.linkedin.com/posts/caulfield-grammar-school_caulfieldgrammar2022-activity-7001816876439781376-DZpH}{\textbf{\ul{Kwong Lee Dow Young Scholar}}} \textit{Leadership \& Academic Excellence} \hfill Melbourne University | Nov 2022\\
+Chosen from 1500+ applicants for general excellence.
+Independently started a student community \href{https://garv-shah.github.io/green/}{"Green"} with 150+ members.\\
+\vspace*{1.5mm}
+\href{https://adffutureinnovators.defencejobs.gov.au/schools/AwardsInformationSTEM.aspx}{\textbf{\ul{ADF Future Innovators Award}}} \hfill Australian Defence Force | Nov 2022\\
 Awarded for outstanding ability to demonstrate innovation and learning in STEM and leadership.\\
-\textbf{Duke of Edinburgh - Silver Award} \hfill DOE International | July 2023\\
+\vspace*{1.5mm}
+\textbf{AMC Prize Award} \textit{Mathematics} \hfill Australian Maths Trust | Oct 2021\\
+Awarded the AMC Prize Award for being in the top 0.3\% of students in the Australian Maths Competition.\\
+\vspace*{1.5mm}
+\textbf{Duke of Edinburgh - Silver Award} \hfill DOE International | Jul 2023\\
 Awarded for success in the endeavours of programming, community service and sports!\\
-\vspace*{2mm}
+\vspace*{1.5mm}
 
 %==== Misc ====%
 \header{Miscellaneous}
@@ -213,9 +204,8 @@ Awarded for success in the endeavours of programming, community service and spor
 	Programming Languages: & Flutter/Dart, Swift, JavaScript, Python, HTML, CSS, TypeScript     \\
 	Software and Tools:    & Adobe Premiere Pro, Adobe After Effects, GitHub, Node.js, Firebase \\
     Languages:    & Fluent in English, Hindi and Gujarati \\
-    Other Interests:    & I love music, drummer for my band called "Paradox" with published songs. \\
-                        & Hobbies include video editing and 3D modelling, created tv show for my school. \\
-                        & Also love traveling, table tennis + rock climbing, tutoring and reading books! \\
+    Other Interests:    & Music lover, drummer for my band "Paradox" with published songs. Hobbies include video editing \\
+                        & and 3D modelling, created tv show for my school. Also love traveling, tutoring and reading books! \\
 \end{tabular}
 
 \vspace*{-80pt}
