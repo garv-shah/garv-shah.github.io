@@ -1,213 +1,252 @@
-\documentclass[a4paper]{article}
-    \usepackage{fullpage}
-    \usepackage{amsmath}
-    \usepackage{amssymb}
-    \usepackage{textcomp}
-    \usepackage[utf8]{inputenc}
-    \usepackage[T1]{fontenc}
-    \usepackage{latexsym}
-    \usepackage[usenames,dvipsnames]{color}
-    \usepackage{verbatim}
-    \usepackage{enumitem}
-    \usepackage[hidelinks]{hyperref}
-    \usepackage{fancyhdr}
-    \usepackage[english]{babel}
-    \usepackage{tabularx}
-    \usepackage{soul}
-    \textheight=10in
-    \pagestyle{empty}
-    \raggedright
-    \usepackage[left=0.26in,right=0.26in,bottom=0.26in,top=0.26in]{geometry}
+%-------------------------
+% Resume in Latex
+% Author : Garv Shah
+% Based off of: https://github.com/jakegut/resume
+%------------------------
 
-    %\renewcommand{\encodingdefault}{cg}
-%\renewcommand{\rmdefault}{lgrcmr}
+\documentclass[letterpaper,11pt]{article}
 
-% DEFINITIONS FOR RESUME %%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{soul}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
 
 \pagestyle{fancy}
 \setuldepth{underline}
-\fancyhf{} % sets both header and footer to nothing
-\renewcommand{\headrulewidth}{0pt}
+\fancyhf{} % clear all header and footer fields
 \fancyfoot{}
-%\fancyfoot[RE,LO]{Note that this document has clickable links thanks to \LaTeX, so most headings will lead you to a relevant webpage!}%
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
 
-\newcommand{\area} [2] {
-    \vspace*{-9pt}
-    \begin{verse}
-        \textbf{#1}   #2
-    \end{verse}
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+    \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+    \item\small{
+            {#1 \vspace{-2pt}}
+    }
 }
 
-\newcommand{\lineunder} {
-    \vspace*{-8pt} \\
-    \hspace*{-10pt} \hrulefill \\
+\newcommand{\resumeSubheading}[5][]{
+    \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#2} #1 & #3 \\
+    \textit{\small#4} & \textit{\small #5} \\
+    \end{tabular*}\vspace{-7pt}
 }
 
-\newcommand{\header} [1] {
-    {\hspace*{-10pt}\vspace*{6pt} \large\textsc{\textbf{#1}}}
-    \vspace*{-6pt} \lineunder
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
 }
 
-\newcommand{\employer} [3] {
-    { \textbf{#1} (#2)\\ \ul{\textbf{\emph{#3}}}\\  }
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    #1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
 }
 
-\newcommand{\contact} [3] {
-    \vspace*{-10pt}
-    \begin{center}
-        {\Huge \scshape {#1}}\\
-        #2 \\ #3
-    \end{center}
-    \vspace*{-8pt}
-}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
 
-\newenvironment{achievements}{
-    \begin{list}
-        {$\bullet$}{\topsep 0pt \itemsep -2pt}}{\vspace*{4pt}
-    \end{list}
-}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
-\newcommand{\schoolwithcourses} [4] {
-    \textbf{#1} #2 $\bullet$ #3\\
-    #4 \\
-    \vspace*{5pt}
-}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
-\newcommand{\school} [4] {
-    \textbf{#1} #2 $\bullet$ #3\\
-    #4 \\
-}
-% END RESUME DEFINITIONS %%%%%%%%%%%%%%%%%%%%%%%
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \begin{document}
 
-
-
-%==== Profile ====%
+%----------HEADING----------
 
 \begin{center}
-    \textbf{\Huge \scshape Garv Shah} \\ \vspace{1pt}
-    \small \href{tel:+61417047047}{+61 417 047 047} $|$ \href{mailto:gshah.6110@gmail.com}{gshah.6110@gmail.com} $|$
-    \href{https://www.linkedin.com/in/garvshah/}{\ul{LinkedIn}} $|$
-    \href{https://garv-shah.github.io/}{\ul{GitHub}}
+\textbf{\Huge \scshape Garv Shah} \\ \vspace{1pt}
+\small \href{tel:+61417047047}{+61 417 047 047} $|$ \href{mailto:gshah.6110@gmail.com}{gshah.6110@gmail.com} $|$
+\href{https://www.linkedin.com/in/garvshah/}{\ul{LinkedIn}} $|$
+\href{https://garv-shah.github.io/}{\ul{GitHub}}
 \end{center}
-\vspace{-2mm}
 
-%==== Education ====%
-\header{Education}
-\href{https://www.unimelb.edu.au/}{\textbf{\ul{The University of Melbourne}}} (B-SCI Computing \& Software Systems, 92.50 WAM) \hfill Jan 2024 - Current\\
-\vspace{-2mm}
-\begin{itemize} \itemsep -1pt
-    \item Completed University of Melbourne Extension Program Maths with H1 (First Class Honours) in high-school.
-    \item Also studying concurrent diploma in Mathematical Sciences, specialising in Discrete Maths and Operations Research.
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading[(92.50 WAM)]
+{\href{https://www.unimelb.edu.au/}{\ul{The University of Melbourne}}}{Melbourne, Australia}
+{B-SCI (Computing \& Software Systems), D-MATHSC (Discrete Maths \& Operations Research)}{Jan. 2024 -- Current}
+\resumeItemListStart
+%        \resumeItem{Completed University of Melbourne Extension Program Maths with H1 (First Class Honours) in high-school}
+\resumeItem{Projects Officer at CISSA, currently creating social media website for ``The Conversation''}
+\resumeItemListEnd
+\resumeSubheading[(99.50 ATAR)]
+{\href{https://www.caulfieldgs.vic.edu.au/wheelers-hill/}{\ul{Caulfield Grammar School - Wheelers Hill}}}{Melbourne, Australia}
+{VCE, Academic Scholarship}{Jan. 2019 -- Nov. 2024}
+\resumeItemListStart
+\resumeItem{Ran school maths club and programming society; \href{https://github.com/cgs-math/app}{\ul{built app}} w/ weekly problems, 120 users; taught 20 student classes \& made competitions while increasing membership by 450\%}
+\resumeItem{Debating captain; led 98 students in state-wide program \& made weekly workshops; coordinated 5 competitions \& increased participation by 350\%; awarded school `Best Speaker' 3x and `Swannie' for best speaker in region/grade}
+\resumeItem{Member of school committee; Langley house vice captain; co-directed musical w/ 111 participants}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{\href{https://axiomeducation.com.au/}{\ul{Information and Operations Officer}}}{Dec. 2024 -- Present}
+{Axiom Education}{Melbourne, Australia}
+\resumeItemListStart
+\resumeItem{Founded education start-up based in Melbourne, currently a team of 6 staff teaching 25 students}
+\resumeItemListEnd
+
+% possibly include Spark Engineering Camp
+
+%    \resumeSubheading
+%      {Tutor and Sports Coach}{Feb. 2025 -- Present}
+%      {Caulfield Grammar School}{Melbourne, Australia}
+%      \resumeItemListStart
+%        \resumeItem{Teachers' assistant for Maths Methods, Specialist Maths, and Software Development}
+%        \resumeItem{Private tutor for disadvantaged students on ``Foundation Scholarship''}
+%        \resumeItem{Sports coach for table tennis and rock-climbing, along with recreational sports}
+%      \resumeItemListEnd
+
+% -----------Multiple Positions Heading-----------
+%    \resumeSubSubheading
+%     {Software Engineer I}{Oct 2014 - Sep 2016}
+%     \resumeItemListStart
+%        \resumeItem{Apache Beam}
+%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
+%     \resumeItemListEnd
+%    \resumeSubHeadingListEnd
+%-------------------------------------------
+
+\resumeSubheading
+{Freelance Developer}{May 2021 -- Present}
+{Self-employed}{Melbourne, Australia}
+\resumeItemListStart
+\resumeItem{Operating technology systems for 6 small to medium size businesses; 7 apps on stores w/ 20k+ installs}
+\resumeItem{Created enterprise order/employee management solution for NP Logistics; 15+ weekly orders w/ live tracking}
+\resumeItemListEnd
+
+\resumeSubheading
+{\href{https://garv-shah.github.io/nsvc.pdf}{\ul{Executive Committee Member}}}{Oct. 2023 -- Nov. 2024}
+{National Student Voice Council \& Victorian Student Representative Council}{Melbourne, Australia}
+\resumeItemListStart
+\resumeItem{Liaised with national/state ministers on policy reform; organised state ``Congress'', 100+ participants, \$23k profit}
+\resumeItem{Successfully pushed for free public transport for under 18s; helped develop 10-year state priorities for Victoria}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+\resumeProjectHeading
+{\href{https://2cousins.org/}{\textbf{\ul{2cousins}}}}{\emph{Flutter, Firebase}}
+\resumeItemListStart
+\resumeItem{Led 18 intl volunteers to teach 200+ students from underprivileged backgrounds weekly and got 2 students into uni}
+\resumeItem{Created app with gamified learning process to enable teaching despite language barriers}
+\resumeItem{Raised $\sim\$$6k for rural development and nominated for 7NEWS Young Achiever Saward Dawson Award}
+\resumeItemListEnd
+\resumeProjectHeading
+{\textbf{The NOVA System}}{\emph{Flutter, Firebase, Node.js, REST APIs}}
+\resumeItemListStart
+\resumeItem{Built system to mimic live cryptocurrency transactions; workshops for 300+ students on financial safety/education}
+\resumeItem{Negotiated \$25k VC investment for implementation into intl IB curriculum; closure due to data provider sunsetting}
+\resumeItemListEnd
+\resumeProjectHeading
+{\href{https://garv-shah.github.io/applications_of_tsp.pdf}{\textbf{\ul{Applications of the Travelling Salesperson Problem}}}}{\emph{Python, Held-Karp, Simulated Annealing}}
+\resumeItemListStart
+\resumeItem{Conducted informal research during free time; 63-page paper comparing exact vs heuristic applications}
+\resumeItemListEnd
+\resumeProjectHeading
+{\href{https://caulfieldsync.vercel.app/}{\textbf{\ul{CaulfieldSync}}}}{\emph{Next.js, iCal, REST APIs}}
+\resumeItemListStart
+\resumeItem{Developed API for student developer interoperability over school backend, allowing for 4 peer-built apps}
+\resumeItem{Used API to create a calendar integration with school timetable w/ 150+ users}
+\resumeItem{Uncovered and proposed mitigation strategies for 6 vulnerabilities within school systems during development}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------AWARDS-----------
+\section{Awards}
+\resumeSubHeadingListStart
+
+\resumeProjectHeading
+{\href{https://www.wwdcscholars.com/s/DF1A5147-A993-44E4-8739-8A050139A7BA/2021}{\textbf{\ul{Apple WWDC Scholarship Award}}} $|$ Apple Inc.}{Jun. 2021}
+\resumeItemListStart
+\resumeItem{1/300 global students awarded in Swift Student Challenge, sponsored to attend Worldwide Developer Conference}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\href{https://www.acer.org/au/discover/article/bray-park-and-caulfield-grammar-schools-top-maths-challenge}{\textbf{\ul{IMMC Award of Meritorious Achievement}}}  $|$ ACER.}{May. 2022}
+\resumeItemListStart
+\resumeItem{Placed 2nd in Australia for modelling most efficient way to board planes, proceeding to intl finals out of 58 finalists}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+\small{\item{
+\textbf{Languages}{: Python, TypeScript/JavaScript, Dart, Swift, HTML/CSS, C} \\
+\textbf{Libraries and Frameworks}{: Flutter, React, Node.js, Next.js, Material-UI} \\
+\textbf{Software and Tools}{: Git, \LaTeX, Docker, Firebase, Google Cloud Platform, IntelliJ, Premiere Pro, After Effects} \\
+}}
 \end{itemize}
-\vspace{-2mm}
-\href{https://www.caulfieldgs.vic.edu.au/wheelers-hill/}{\textbf{\ul{Caulfield Grammar School - Wheelers Hill}}} (VCE, Full Academic Scholarship, 99.50 ATAR)\hfill Jan 2019 - Nov 2024\\
-\vspace{-2mm}
-\begin{itemize} \itemsep -1pt
-    \item President and administrator of school \href{https://cgs-math.github.io/}{\ul{maths club}} and programming society, \href{https://cgs-programming.github.io}{\ul{CGSP}}.
-    Created school Maths Captain role; \href{https://github.com/cgs-math/app}{\ul{built app}} w/ weekly problems, 120 users; taught 20 student classes \& made comps; increased membership by 450\%.
-    \item Debating captain; led 98 students in state-wide program \& made weekly workshops; coordinated 5 comps \& increased participation by 350\%; conferred school ‘Best Speaker’ 3x along with ‘Swannie’ for best speaker in region and grade.
-    \item Engaged in music/theatre (part of 9 ensembles, 9 productions) \& tennis, table-tennis, soccer, badminton, rock-climbing; helped raise $\sim$\$12k over 5 years for charity concert; co-directed musical w/ 111 participants.
-    \item Highest awards for Academics, Music, Debating, Publications, Cheer Squad, Public Speaking \& Community Service.
-\end{itemize}
-\vspace{-2mm}
-
-%==== Experience ====%
-\vspace*{1mm}
-\header{Professional Experience}
-
-\textbf{\href{https://axiomeducation.com.au/}{\ul{Axiom Education}}} \textit{Co-founder, Partner, Information and Operations Officer} \hfill Dec 2024 - Present\\
-\vspace{-3.5mm}
-\begin{itemize} \itemsep 0.5pt
-\item Founded education start-up based in Melbourne, garnering over 400 hours of teaching experience.
-\end{itemize}
-\vspace{-2.5mm}
-
-\textbf{\href{https://garv-shah.github.io/portfolio/}{\ul{Self Employed}}} \textit{Freelance Programmer} \hfill NP Logistics, Shaw FP, Verdis Government, etc. | May 2021 - Present\\
-\vspace{-3.5mm}
-\begin{itemize} \itemsep 0.5pt
-\item Earned \$11k+ from client work; 7 applications on stores w/ 20k+ installs. Operating systems for 6 small businesses.
-\end{itemize}
-\vspace{-2.5mm}
-
-\textbf{\href{https://vicsrc.org.au/about/executive-committee}{\ul{VicSRC}}} \& \textbf{\href{https://garv-shah.github.io/nsvc.pdf}{\ul{National Student Voice Council}}} \textit{Executive Committee Member} \hfill \href{https://vicsrc.org.au/}{VicSRC} | Oct 2023 - Nov 2024\\
-\vspace{-3.5mm}
-\begin{itemize} \itemsep 0.5pt
-\item Liaised with national/state ministers on policy reform; organised state ‘Congress’ w/ 100+ ppl and achieved $\sim$\$23k profit; helped develop 10-year state priorities for Victorian Department of Education.
-\end{itemize}
-\vspace{-2.5mm}
-
-\textbf{\href{https://www.csiro.au/en/}{\ul{CSIRO}}} \textit{Student Internship} \hfill Sep 2022 - Oct 2022\\
-\vspace{-3.5mm}
-\begin{itemize} \itemsep 0.5pt
-\item Shadowed researchers across 5 fields (Software, Titanium Alloy 3D Printing, Electron Microscopy, Protein Synthesis \& Bio Tech) e.g. Dr Helmut Thissen/Dr John Page; interpreted Aus Telescope National Facility data using algorithmic analysis.
-\end{itemize}
-\vspace{-2.5mm}
-
-\textbf{\href{https://www.juniorengineers.com.au/}{\ul{Junior Engineers}}} \& \textbf{\href{https://innovatetechacademy.com/}{\ul{Innovate Technology Robotics Academy}}} \textit{Teacher} \hfill Dec 2022 - Oct 2023 // Mar 2022 - Jun 2022\\
-\vspace{-3.5mm}
-\begin{itemize} \itemsep 0.5pt
-    \item Tutored young students, building robotics/programming skills e.g. with VEX IQ as past national championship winner.
-\end{itemize}
-\vspace{-2.5mm}
-
-%==== Projects ====%
-\vspace*{1mm}
-\header{Projects}
-\href{https://2cousins.org/}{\textbf{\ul{2cousins}}} (Initiative under my non-profit Aporia, ABN: 87127315891) \textit{Founder/CEO} {\textsl{\hfill} Flutter, Firebase}\\
-Led 18 intl volunteers to teach 200+ students from underprivileged backgrounds weekly; raised $\sim$\$6k for rural dev and got 2 students into uni; nominated for 3 social impact awards including 7NEWS Young Achiever Saward Dawson Award (\$1000 value).\\
-\vspace*{1.5mm}
-\href{https://the-nova-system.github.io/}{\textbf{\ul{The NOVA System}}} \textit{Founder/CEO} {\textsl{\hfill} Flutter, REST APIs, Firebase, Node.js}\\
-Built system to mimic live cryptocurrency transactions; workshops for 300+ students on financial education; negotiated \$25k VC investment for implementation into intl IB curriculum before closure due to provider pricing changes.\\
-\vspace*{1.5mm}
-\href{https://caulfieldsync.vercel.app/}{\textbf{\ul{CaulfieldSync}}} {\textsl{\hfill} Next.js, REST APIs, iCal}\\
-Developed API for student interoperability over school backend (created calendar integration \& 4 peer applications, 100+ users); reported and mitigated 6 vulnerabilities with CGS IT team.
-Founded 1st comp club for pro bono projects on community issues.\\
-\vspace*{1.5mm}
-\href{https://nplogistics.com.au}{\textbf{\ul{NP Logistics}}} \textit{Independent Contractor} {\textsl{\hfill} Flutter, Firebase, Node.js}\\
-Enterprise order/employee management solution; 15+ orders weekly w/ live tracking to transition to digital platform.\\
-\vspace*{1.5mm}
-
-%%==== Research ====%
-\vspace*{1mm}
-\header{Research}
-\href{https://garv-shah.github.io/applications_of_tsp.pdf}{\textbf{\ul{Applications of Traveling Salesperson Problem}}} \hfill Held-Karp, Simulated Annealing | Jun 2022 - Aug 2023\\
-Conducted informal research as passion project, comparing exact vs heuristic implementations w/ time complexity analyses. \\
-\vspace*{1.5mm}
-
-%==== Awards ====%
-\vspace*{1mm}
-\header{Awards}
-\href{https://www.wwdcscholars.com/s/DF1A5147-A993-44E4-8739-8A050139A7BA/2021}{\textbf{\ul{Apple WWDC 2021 Scholarship Award}}} \textit{App Development} \hfill Apple Inc. | Jun 2021\\
-One of 300 global students awarded in the Swift Student Challenge, sponsored to attend the Worldwide Developer Conference.\\
-\vspace*{1.5mm}
-\href{https://www.acer.org/au/discover/article/bray-park-and-caulfield-grammar-schools-top-maths-challenge}{\textbf{\ul{IMMC Award of Meritorious Achievement}}} \textit{Statistical \& Algorithmic Analysis} \hfill ACER | May 2022\\
-Placed 2nd in Australia for modelling most efficient way to board planes, proceeding to the intl finals out of 58 global finalists.\\
-\vspace*{1.5mm}
-\href{https://www.non-trivial.org/}{\textbf{\ul{Non-Trivial Fellow}}} \textit{Research} \hfill Non-Trivial | Jul 2024\\
-Chosen from 3500+ global applicants as 1 of 200 for CS research on applications of computability theory in CAPTCHAs.\\
-\vspace*{1.5mm}
-\href{https://www.linkedin.com/posts/caulfield-grammar-school_caulfieldgrammar2022-activity-7001816876439781376-DZpH}{\textbf{\ul{Kwong Lee Dow Young Scholar}}} \textit{Leadership \& Academic Excellence} \hfill Melbourne University | Nov 2022\\
-Chosen from 1500+ applicants for general excellence.
-Independently started a student community \href{https://garv-shah.github.io/green/}{"Green"} w/ 150+ members.\\
-\vspace*{1.5mm}
-
-%==== Voluntary Work ====%
-% \header{Voluntary Work}
 
 
-%==== Skills & Interests ====%
-\vspace*{1mm}
-\header{Skills \& Interests}
-\begin{tabular}{ l l }
-	Programming Languages: & Flutter/Dart, Swift, JavaScript, Python, HTML, CSS, TypeScript     \\
-	Software and Tools:    & Adobe Premiere Pro, Adobe After Effects, GitHub, Docker, Latex, Node.js, Firebase \\
-    Languages:    & Fluent in English, Hindi and Gujarati \\
-    Other Interests:    & Music lover, drummer for my band "Paradox" with published music. Hobbies include video editing \\
-                        & and 3D modelling, created tv show for my school. Also love traveling, learning and reading books! \\
-\end{tabular}
-
-\vspace*{-80pt}
-
+%-------------------------------------------
 \end{document}
